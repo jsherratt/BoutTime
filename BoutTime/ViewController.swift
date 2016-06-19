@@ -13,10 +13,12 @@ class ViewController: UIViewController {
     //-----------------------
     //MARK: Variables
     //-----------------------
+    let nextRoundFailImg = UIImage(named: "next_round_fail")
+    let nextRoundSuccessImg = UIImage(named: "next_round_success")
     
     //Timer
-    var timer: NSTimer?
-    var seconds = 60
+    var timer = NSTimer()
+    var seconds = 10
     var timerIsRunning = false
     
     //-----------------------
@@ -41,6 +43,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var halfUpBtn2: UIButton!
     @IBOutlet weak var halfDownBtn2: UIButton!
     @IBOutlet weak var fullUpBtn: UIButton!
+    @IBOutlet weak var nextRoundBtn: UIButton!
     
     //-----------------------
     //MARK: View
@@ -51,11 +54,18 @@ class ViewController: UIViewController {
         //Round corners of white views
         roundCorners()
         
+        
     }
     
     //-----------------------
     //MARK: Button Actions
     //-----------------------
+    @IBAction func nextRound() {
+        
+        nextRoundBtn.hidden = true
+        
+        //TODO: add code to move to the next round
+    }
     
     //-----------------------
     //MARK: Timer
@@ -75,9 +85,11 @@ class ViewController: UIViewController {
         
         if seconds == 0 {
             
-            timer?.invalidate()
+            timer.invalidate()
             seconds = 60
             timerIsRunning = false
+            
+            nextRoundBtn.hidden = false
             
             //TODO: add function call to check the order of events
         }
@@ -97,6 +109,18 @@ class ViewController: UIViewController {
             view.clipsToBounds = true
         }
         
+    }
+    
+    //-----------------------
+    //MARK: Device motion
+    //-----------------------
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        
+        //Detect shake motion
+        if motion == .MotionShake {
+            
+            //TODO: add function call to check the order of events
+        }
     }
     
     //-----------------------
