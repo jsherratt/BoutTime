@@ -68,6 +68,20 @@ class ViewController: UIViewController {
     }
     
     //-----------------------
+    //MARK: Functions
+    //-----------------------
+    func roundCorners () {
+        
+        for view in arrayOfViews {
+            
+            //For each view in the array of view round the corner with a radius of 5
+            view.layer.cornerRadius = 5
+            view.clipsToBounds = true
+        }
+        
+    }
+    
+    //-----------------------
     //MARK: Timer
     //-----------------------
     func startTimer() {
@@ -95,20 +109,6 @@ class ViewController: UIViewController {
         }
         
         timerLabel.text = "0:\(seconds)"
-    }
-    
-    //-----------------------
-    //MARK: Functions
-    //-----------------------
-    func roundCorners () {
-        
-        for view in arrayOfViews {
-            
-            //For each view in the array of view round the corner with a radius of 5
-            view.layer.cornerRadius = 5
-            view.clipsToBounds = true
-        }
-        
     }
     
     //-----------------------
