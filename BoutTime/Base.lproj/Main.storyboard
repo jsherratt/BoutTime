@@ -357,7 +357,7 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hi7-CS-rmW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:60" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hi7-CS-rmW">
                                 <rect key="frame" x="258" y="545" width="84" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="50"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -374,7 +374,7 @@
                         <constraints>
                             <constraint firstItem="qZZ-nr-s14" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9mm-os-eyS"/>
                             <constraint firstItem="CHZ-19-nKq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="eNf-EZ-u7m"/>
-                            <constraint firstItem="qZZ-nr-s14" firstAttribute="top" secondItem="Hi7-CS-rmW" secondAttribute="bottom" constant="1" id="gfj-4b-A1N"/>
+                            <constraint firstItem="qZZ-nr-s14" firstAttribute="top" secondItem="Hi7-CS-rmW" secondAttribute="bottom" id="gfj-4b-A1N"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CHZ-19-nKq" secondAttribute="trailing" constant="18" id="toK-VS-YcE"/>
                             <constraint firstItem="Hi7-CS-rmW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tsn-Cs-j5D">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
@@ -416,10 +416,10 @@
                         <outlet property="text3Label" destination="BAy-zS-0ao" id="HfD-QP-jn0"/>
                         <outlet property="text4Label" destination="e0r-da-T9I" id="QZv-wL-8h8"/>
                         <outlet property="timerLabel" destination="Hi7-CS-rmW" id="aSt-uv-YPt"/>
-                        <outlet property="view1" destination="gp2-Do-WZ1" id="fTy-pr-RxJ"/>
-                        <outlet property="view2" destination="xg8-uc-rh0" id="GzF-W6-jbk"/>
-                        <outlet property="view3" destination="ic0-zk-MEK" id="BLi-gl-y7H"/>
-                        <outlet property="view4" destination="KSy-dX-PhI" id="dSZ-Iq-bAA"/>
+                        <outletCollection property="arrayOfViews" destination="gp2-Do-WZ1" id="M1u-ls-gAD"/>
+                        <outletCollection property="arrayOfViews" destination="xg8-uc-rh0" id="xLV-Iu-LxT"/>
+                        <outletCollection property="arrayOfViews" destination="ic0-zk-MEK" id="N6u-FO-sFk"/>
+                        <outletCollection property="arrayOfViews" destination="KSy-dX-PhI" id="NEM-rR-xlF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

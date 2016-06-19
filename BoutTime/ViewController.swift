@@ -14,15 +14,17 @@ class ViewController: UIViewController {
     //MARK: Variables
     //-----------------------
     
+    //Timer
+    var timer: NSTimer?
+    var seconds = 60
+    var timerIsRunning = false
+    
     //-----------------------
     //MARK: Outlets
     //-----------------------
     
     //Views
-    @IBOutlet weak var view1: UIView!
-    @IBOutlet weak var view2: UIView!
-    @IBOutlet weak var view3: UIView!
-    @IBOutlet weak var view4: UIView!
+    @IBOutlet var arrayOfViews: [UIView]!
     
     //Labels
     @IBOutlet weak var text1Label: UILabel!
@@ -45,13 +47,57 @@ class ViewController: UIViewController {
     //-----------------------
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Round corners of white views
+        roundCorners()
+        
     }
-    
     
     //-----------------------
     //MARK: Button Actions
     //-----------------------
     
+    //-----------------------
+    //MARK: Timer
+    //-----------------------
+    func startTimer() {
+        
+        if timerIsRunning == false {
+            
+            timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(ViewController.countdown), userInfo: nil, repeats: true)
+            timerIsRunning = true
+        }
+    }
+    
+    func countdown() {
+        
+        seconds -= 1
+        
+        if seconds == 0 {
+            
+            timer?.invalidate()
+            seconds = 60
+            timerIsRunning = false
+            
+            //TODO: add function call to check the order of events
+        }
+        
+        timerLabel.text = "0:\(seconds)"
+    }
+    
+    //-----------------------
+    //MARK: Functions
+    //-----------------------
+    func roundCorners () {
+        
+        for view in arrayOfViews {
+            
+            //For each view in the array of view round the corner with a radius of 5
+            view.layer.cornerRadius = 5
+            view.clipsToBounds = true
+        }
+        
+    }
     
     //-----------------------
     //MARK: Extra
