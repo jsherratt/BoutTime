@@ -58,10 +58,18 @@
 				D46234A11D173FE50056FA48 /* ViewController.swift */,
 				D46234A31D173FE50056FA48 /* Main.storyboard */,
 				D46234A61D173FE50056FA48 /* Assets.xcassets */,
+				D46234B11D17408B0056FA48 /* Extra */,
+			);
+			path = BoutTime;
+			sourceTree = "<group>";
+		};
+		D46234B11D17408B0056FA48 /* Extra */ = {
+			isa = PBXGroup;
+			children = (
 				D46234A81D173FE50056FA48 /* LaunchScreen.storyboard */,
 				D46234AB1D173FE50056FA48 /* Info.plist */,
 			);
-			path = BoutTime;
+			name = Extra;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
