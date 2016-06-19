@@ -298,6 +298,7 @@
 				D46234B01D173FE50056FA48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
