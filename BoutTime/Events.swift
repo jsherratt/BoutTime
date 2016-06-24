@@ -8,7 +8,15 @@
 
 import Foundation
 
-struct Events {
+//-----------------------
+//MARK: Structs
+//-----------------------
+struct EventsQuiz {
     
+    var events: [Events]
     
+    init(events:[Events]) {
+        
+        self.events = events
+    }
 }

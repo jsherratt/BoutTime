@@ -8,16 +8,86 @@
 
 import Foundation
 
-class EventModel {
+//-----------------------
+//MARK: Error types
+//-----------------------
+enum EventsError: ErrorType {
     
-    let title:String
+    case InvalidResource
+    case ConversionError
+}
+
+//-----------------------
+//MARK: Classes
+//-----------------------
+class Events {
+    
+    let name:String
     let date:Int
     let url:String
     
-    init(title:String, date: Int, url:String) {
+    init(name:String, date: Int, url:String) {
         
-        self.title = title
+        self.name = name
         self.date = date
         self.url = url
     }
+    
 }
+
+//-----------------------
+//MARK: Helper Classes
+//-----------------------
+class PlistConverter {
+    
+    class func arrayFromFile(resource: String, ofType type: String) throws -> [[String : String]] {
+        
+        //Check if the path to the file exists
+        guard let path = NSBundle.mainBundle().pathForResource(resource, ofType: type) else {
+            throw EventsError.InvalidResource
+        }
+        
+        //Try and cast as an array
+        guard let array = NSArray(contentsOfFile: path),
+            let castArray = array as? [[String: String]] else {
+                throw EventsError.ConversionError
+        }
+        return castArray
+    }
+}
+
+class EventsUnarchiver {
+    
+    class func eventsFromArray(array: [[String : String]]) -> [Events] {
+        
+        var eventArray: [Events] = []
+        
+        for event in array {
+            
+            //Create and append a new event for each event in the array of events
+            if let name = event["name"],
+                let date = event["date"],
+                let dateAsInt = Int(date),
+                let url = event["url"] {
+                let newEvent = Events(name: name, date: dateAsInt, url: url)
+                eventArray.append(newEvent)
+            }
+        }
+        
+        return eventArray
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

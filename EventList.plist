@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>Barack Obama</string>
+		<key>date</key>
+		<string>2009</string>
+		<key>url</key>
+		<string>yes</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>George W. Bush</string>
+		<key>date</key>
+		<string>2001</string>
+		<key>url</key>
+		<string>yes</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Bill Clinton</string>
+		<key>date</key>
+		<string>1993</string>
+		<key>url</key>
+		<string>yes</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>George H. W. Bush</string>
+		<key>date</key>
+		<string>1989</string>
+		<key>url</key>
+		<string>yes</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Ronald Reagan</string>
+		<key>date</key>
+		<string>1981</string>
+		<key>url</key>
+		<string>yes</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Jimmy Carter</string>
+		<key>date</key>
+		<string>1977</string>
+		<key>url</key>
+		<string>yes</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Gerald Ford</string>
+		<key>date</key>
+		<string>1974</string>
+		<key>url</key>
+		<string>yes</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Richard Nixon</string>
+		<key>date</key>
+		<string>1969</string>
+		<key>url</key>
+		<string>yes</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Lyndon B. Johnson</string>
+		<key>date</key>
+		<string>1963</string>
+		<key>url</key>
+		<string>yes</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>John F. Kennedy</string>
+		<key>date</key>
+		<string>1961</string>
+		<key>url</key>
+		<string>yes</string>
+	</dict>
+</array>
+</plist>
