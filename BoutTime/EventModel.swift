@@ -10,5 +10,14 @@ import Foundation
 
 class EventModel {
     
+    let title:String
+    let date:Int
+    let url:String
     
+    init(title:String, date: Int, url:String) {
+        
+        self.title = title
+        self.date = date
+        self.url = url
+    }
 }
