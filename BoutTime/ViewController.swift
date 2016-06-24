@@ -25,13 +25,14 @@ class ViewController: UIViewController {
     var roundQuiz = EventsQuiz(events: [])
     var correctAnswers = 0
     var roundsCompleted = 0
-    let numberOfRounds = 2
+    let numberOfRounds = 6
     var index = 0
     var webUrl = ""
+    var hasDisplayedAlert = false
     
     //Timer
     var timer = NSTimer()
-    var seconds = 120
+    var seconds = 60
     var timerIsRunning = false
     var eventBtnsArray: [UIButton] = []
     
@@ -41,6 +42,7 @@ class ViewController: UIViewController {
     required init?(coder aDecoder: NSCoder) {
         
         do {
+            //Get plist and unarchive it
             let array = try PlistConverter.arrayFromFile("EventList", ofType: "plist")
             self.eventQuiz = EventsQuiz(events: EventsUnarchiver.eventsFromArray(array))
             
@@ -92,8 +94,21 @@ class ViewController: UIViewController {
         //Round corners of white views
         roundCorners()
         
-        //Set up and start the game
+        //Setup the game
         setUpGame()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        
+        //Display alert to inform the user what to do
+        if hasDisplayedAlert == true {
+            
+        }else {
+            
+            displayAlert()
+            hasDisplayedAlert = true
+        }
     }
     
     //-----------------------
@@ -102,6 +117,7 @@ class ViewController: UIViewController {
     @IBAction func nextRound() {
         
         //Disable btns, clear the round array, display new events and reset the timer
+        infoLabel.text = "Shake to complete"
         disableInteractionWithBtns(interactionDisabeld: true)
         roundQuiz.events.removeAll()
         nextRoundBtn.hidden = true
@@ -155,12 +171,12 @@ class ViewController: UIViewController {
             
         case 1:
             
-            //Perform segue to webViewController
+            //Perform segue to web view controller
             webUrl = roundQuiz.events[0].url
             performSegueWithIdentifier("showWebView", sender: self)
             
         case 2:
-            
+ 
             webUrl = roundQuiz.events[1].url
             performSegueWithIdentifier("showWebView", sender: self)
             
@@ -259,7 +275,6 @@ class ViewController: UIViewController {
         roundQuiz.events.removeAll()
         displayEvents()
         timerLabel.hidden = false
-        startTimer()
     }
     
     
@@ -317,7 +332,7 @@ class ViewController: UIViewController {
         
         //Reset the timer
         timer.invalidate()
-        seconds = 3
+        seconds = 60
         timerIsRunning = false
     }
     
@@ -334,6 +349,17 @@ class ViewController: UIViewController {
             self.nextRoundBtn.hidden = true
             self.showScoreBtn.hidden = false
         }
+    }
+    
+    func displayAlert() {
+        
+        let alert = UIAlertController(title: "How to Play", message: "Order the presidents in chronological order from most recent to least recent. Top down.", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (alertAction) -> Void in
+            
+            self.startTimer()
+        }))
+        
+        presentViewController(alert, animated: true, completion: nil)
     }
     
     //-----------------------
@@ -385,7 +411,7 @@ class ViewController: UIViewController {
                 destinationVC.correctAnswers = self.correctAnswers
             }
             
-        }else if segue.identifier == "shoWebView" {
+        }else if segue.identifier == "showWebView" {
             
             if let destinationVC = segue.destinationViewController as? WebViewViewController {
                 
@@ -400,6 +426,7 @@ class ViewController: UIViewController {
             
             //Set the game up if the user presses play again
             setUpGame()
+            startTimer()
         }
     }
     

@@ -8,7 +8,7 @@
 		<key>date</key>
 		<string>2009</string>
 		<key>url</key>
-		<string>yes</string>
+		<string>https://en.wikipedia.org/wiki/Barack_Obama</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -16,7 +16,7 @@
 		<key>date</key>
 		<string>2001</string>
 		<key>url</key>
-		<string>yes</string>
+		<string>https://en.wikipedia.org/wiki/George_W._Bush</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -24,7 +24,7 @@
 		<key>date</key>
 		<string>1993</string>
 		<key>url</key>
-		<string>yes</string>
+		<string>https://en.wikipedia.org/wiki/Bill_Clinton</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -32,7 +32,7 @@
 		<key>date</key>
 		<string>1989</string>
 		<key>url</key>
-		<string>yes</string>
+		<string>https://en.wikipedia.org/wiki/George_H._W._Bush</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -40,7 +40,7 @@
 		<key>date</key>
 		<string>1981</string>
 		<key>url</key>
-		<string>yes</string>
+		<string>https://en.wikipedia.org/wiki/Ronald_Reagan</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -48,7 +48,7 @@
 		<key>date</key>
 		<string>1977</string>
 		<key>url</key>
-		<string>yes</string>
+		<string>https://en.wikipedia.org/wiki/Jimmy_Carter</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -56,7 +56,7 @@
 		<key>date</key>
 		<string>1974</string>
 		<key>url</key>
-		<string>yes</string>
+		<string>https://en.wikipedia.org/wiki/Gerald_Ford</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -64,7 +64,7 @@
 		<key>date</key>
 		<string>1969</string>
 		<key>url</key>
-		<string>yes</string>
+		<string>https://en.wikipedia.org/wiki/Richard_Nixon</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -72,7 +72,7 @@
 		<key>date</key>
 		<string>1963</string>
 		<key>url</key>
-		<string>yes</string>
+		<string>https://en.wikipedia.org/wiki/Lyndon_B._Johnson</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -80,7 +80,183 @@
 		<key>date</key>
 		<string>1961</string>
 		<key>url</key>
-		<string>yes</string>
+		<string>https://en.wikipedia.org/wiki/John_F._Kennedy</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Dwight D. Eisenhower</string>
+		<key>date</key>
+		<string>1953</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Dwight_D._Eisenhower</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Harry S. Truman</string>
+		<key>date</key>
+		<string>1945</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Harry_S._Truman</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Franklin D. Roosevelt</string>
+		<key>date</key>
+		<string>1933</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Franklin_D._Roosevelt</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Herbert Hoover</string>
+		<key>date</key>
+		<string>1929</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Herbert_Hoover</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Calvin Coolidge</string>
+		<key>date</key>
+		<string>1923</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Calvin_Coolidge</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Warren G. Harding</string>
+		<key>date</key>
+		<string>1921</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Warren_G._Harding</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Woodrow Wilson</string>
+		<key>date</key>
+		<string>1913</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Woodrow_Wilson</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>William Howard Taft</string>
+		<key>date</key>
+		<string>1909</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/William_Howard_Taft</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Theodore Roosevelt</string>
+		<key>date</key>
+		<string>1901</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Theodore_Roosevelt</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>William McKinley</string>
+		<key>date</key>
+		<string>1897</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/William_McKinley</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Grover Cleveland</string>
+		<key>date</key>
+		<string>1893</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Grover_Cleveland</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Benjamin Harrison</string>
+		<key>date</key>
+		<string>1889</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Benjamin_Harrison</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Chester A. Arthur</string>
+		<key>date</key>
+		<string>1881</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Chester_A._Arthur</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Rutherford B. Hayes</string>
+		<key>date</key>
+		<string>1877</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Rutherford_B._Hayes</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Ulysses S. Grant</string>
+		<key>date</key>
+		<string>1869</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Ulysses_S._Grant</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Andrew Johnson</string>
+		<key>date</key>
+		<string>1865</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Andrew_Johnson</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Abraham Lincoln</string>
+		<key>date</key>
+		<string>1861</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Abraham_Lincoln</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>James Buchanan</string>
+		<key>date</key>
+		<string>1857</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/James_Buchanan</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Franklin Pierce</string>
+		<key>date</key>
+		<string>1853</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Franklin_Pierce</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Millard Fillmore</string>
+		<key>date</key>
+		<string>1850</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Millard_Fillmore</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Zachary Taylor</string>
+		<key>date</key>
+		<string>1849</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/Zachary_Taylor</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>James K. Polk</string>
+		<key>date</key>
+		<string>1845</string>
+		<key>url</key>
+		<string>https://en.wikipedia.org/wiki/James_K._Polk</string>
 	</dict>
 </array>
 </plist>

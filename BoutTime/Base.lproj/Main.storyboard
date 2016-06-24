@@ -133,6 +133,9 @@
                                                 <state key="normal" title="text2">
                                                     <color key="titleColor" red="0.027450980390000001" green="0.22352941179999999" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="goToWebviewOfEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bmx-oK-X7W"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMi-c2-fcb">
                                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -268,6 +271,9 @@
                                                 <state key="normal" title="text3">
                                                     <color key="titleColor" red="0.027450980390000001" green="0.22352941179999999" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="goToWebviewOfEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Az-rn-8Uv"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -347,6 +353,9 @@
                                                 <state key="normal" title="text4">
                                                     <color key="titleColor" red="0.027450980390000001" green="0.22352941179999999" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="goToWebviewOfEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4g1-Bf-ZMK"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -525,7 +534,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="459" y="470.25"/>
+            <point key="canvasLocation" x="666" y="470"/>
         </scene>
         <!--Web View View Controller-->
         <scene sceneID="Bfq-hc-fDF">
@@ -600,13 +609,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="12W-2j-MT0" firstAttribute="top" secondItem="6RL-ja-JLT" secondAttribute="bottom" constant="-20" id="YtT-US-OMg"/>
+                            <constraint firstItem="12W-2j-MT0" firstAttribute="top" secondItem="zFa-f6-t4l" secondAttribute="top" id="HQL-dT-eDD"/>
                             <constraint firstAttribute="trailing" secondItem="7bp-G7-6h0" secondAttribute="trailing" id="bYb-Pu-eBh"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="12W-2j-MT0" secondAttribute="trailing" constant="-20" id="cUY-v8-88y"/>
-                            <constraint firstItem="12W-2j-MT0" firstAttribute="leading" secondItem="zFa-f6-t4l" secondAttribute="leadingMargin" constant="-20" id="f0g-cg-j67"/>
+                            <constraint firstItem="12W-2j-MT0" firstAttribute="leading" secondItem="zFa-f6-t4l" secondAttribute="leading" id="gjl-r0-e73"/>
                             <constraint firstItem="VGQ-B3-0hT" firstAttribute="top" secondItem="7bp-G7-6h0" secondAttribute="bottom" id="kfi-50-NwF"/>
                             <constraint firstItem="7bp-G7-6h0" firstAttribute="leading" secondItem="zFa-f6-t4l" secondAttribute="leading" id="m7S-Sy-B04"/>
                             <constraint firstItem="7bp-G7-6h0" firstAttribute="top" secondItem="zFa-f6-t4l" secondAttribute="top" id="pXT-VC-y51"/>
+                            <constraint firstAttribute="trailing" secondItem="12W-2j-MT0" secondAttribute="trailing" id="uAk-go-ff2"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -614,9 +623,9 @@
                                 <exclude reference="12W-2j-MT0"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="YtT-US-OMg"/>
-                                <exclude reference="cUY-v8-88y"/>
-                                <exclude reference="f0g-cg-j67"/>
+                                <exclude reference="HQL-dT-eDD"/>
+                                <exclude reference="gjl-r0-e73"/>
+                                <exclude reference="uAk-go-ff2"/>
                                 <exclude reference="bYb-Pu-eBh"/>
                                 <exclude reference="m7S-Sy-B04"/>
                                 <exclude reference="pXT-VC-y51"/>
@@ -629,9 +638,9 @@
                                 <include reference="12W-2j-MT0"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="YtT-US-OMg"/>
-                                <include reference="cUY-v8-88y"/>
-                                <include reference="f0g-cg-j67"/>
+                                <include reference="HQL-dT-eDD"/>
+                                <include reference="gjl-r0-e73"/>
+                                <include reference="uAk-go-ff2"/>
                                 <include reference="bYb-Pu-eBh"/>
                                 <include reference="m7S-Sy-B04"/>
                                 <include reference="pXT-VC-y51"/>
@@ -645,7 +654,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wQz-JX-uRA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="864" y="1110"/>
+            <point key="canvasLocation" x="666" y="1372"/>
         </scene>
         <!--Score View Controller-->
         <scene sceneID="0hW-hO-wZ1">
@@ -728,7 +737,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qMN-XC-bcS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="HQ3-zP-kqQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1294.5" y="470.25"/>
+            <point key="canvasLocation" x="1162" y="470"/>
         </scene>
     </scenes>
     <resources>

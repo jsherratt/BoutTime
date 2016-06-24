@@ -42,6 +42,10 @@ class WebViewViewController: UIViewController {
     //-----------------------
     //MARK: Extra
     //-----------------------
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
