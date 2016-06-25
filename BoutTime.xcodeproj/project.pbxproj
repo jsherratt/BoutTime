@@ -14,6 +14,8 @@
 		D46234A71D173FE50056FA48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D46234A61D173FE50056FA48 /* Assets.xcassets */; };
 		D46234AA1D173FE50056FA48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D46234A81D173FE50056FA48 /* LaunchScreen.storyboard */; };
 		D46234B31D1758F90056FA48 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46234B21D1758F90056FA48 /* EventModel.swift */; };
+		D4964F111D1E00D600B0EF7C /* CorrectDing.wav in Resources */ = {isa = PBXBuildFile; fileRef = D4964F0F1D1E00D600B0EF7C /* CorrectDing.wav */; };
+		D4964F121D1E00D600B0EF7C /* IncorrectBuzz.wav in Resources */ = {isa = PBXBuildFile; fileRef = D4964F101D1E00D600B0EF7C /* IncorrectBuzz.wav */; };
 		D4E561241D1D3C24006FF4FB /* EventList.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4E561231D1D3C24006FF4FB /* EventList.plist */; };
 		D4E561261D1D5D69006FF4FB /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E561251D1D5D69006FF4FB /* ScoreViewController.swift */; };
 		D4E561281D1D6FDC006FF4FB /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E561271D1D6FDC006FF4FB /* WebViewViewController.swift */; };
@@ -29,6 +31,8 @@
 		D46234A91D173FE50056FA48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D46234AB1D173FE50056FA48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D46234B21D1758F90056FA48 /* EventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
+		D4964F0F1D1E00D600B0EF7C /* CorrectDing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = CorrectDing.wav; sourceTree = "<group>"; };
+		D4964F101D1E00D600B0EF7C /* IncorrectBuzz.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = IncorrectBuzz.wav; sourceTree = "<group>"; };
 		D4E561231D1D3C24006FF4FB /* EventList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = EventList.plist; path = ../EventList.plist; sourceTree = "<group>"; };
 		D4E561251D1D5D69006FF4FB /* ScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		D4E561271D1D6FDC006FF4FB /* WebViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
@@ -74,11 +78,12 @@
 			isa = PBXGroup;
 			children = (
 				D462349F1D173FE50056FA48 /* AppDelegate.swift */,
+				D45AE07C1D1D22850046F52C /* Model */,
 				D46234A11D173FE50056FA48 /* ViewController.swift */,
 				D4E561251D1D5D69006FF4FB /* ScoreViewController.swift */,
 				D4E561271D1D6FDC006FF4FB /* WebViewViewController.swift */,
 				D4E561231D1D3C24006FF4FB /* EventList.plist */,
-				D45AE07C1D1D22850046F52C /* Model */,
+				D4964F0E1D1DFF6D00B0EF7C /* Sounds */,
 				D46234A31D173FE50056FA48 /* Main.storyboard */,
 				D46234A61D173FE50056FA48 /* Assets.xcassets */,
 				D46234B11D17408B0056FA48 /* Extra */,
@@ -93,6 +98,15 @@
 				D46234AB1D173FE50056FA48 /* Info.plist */,
 			);
 			name = Extra;
+			sourceTree = "<group>";
+		};
+		D4964F0E1D1DFF6D00B0EF7C /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				D4964F0F1D1E00D600B0EF7C /* CorrectDing.wav */,
+				D4964F101D1E00D600B0EF7C /* IncorrectBuzz.wav */,
+			);
+			name = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,8 +167,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4964F111D1E00D600B0EF7C /* CorrectDing.wav in Resources */,
 				D46234AA1D173FE50056FA48 /* LaunchScreen.storyboard in Resources */,
 				D46234A71D173FE50056FA48 /* Assets.xcassets in Resources */,
+				D4964F121D1E00D600B0EF7C /* IncorrectBuzz.wav in Resources */,
 				D46234A51D173FE50056FA48 /* Main.storyboard in Resources */,
 				D4E561241D1D3C24006FF4FB /* EventList.plist in Resources */,
 			);
