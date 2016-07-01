@@ -26,7 +26,7 @@ class ScoreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        scoreLabel.text = "You score \(correctAnswers) out of 6"
+        scoreLabel.text = "You scored \(correctAnswers) out of 6"
     }
     
     //-----------------------

@@ -31,12 +31,14 @@ class ViewController: UIViewController {
     var webUrl = ""
     var hasDisplayedAlert = false
     
+    //Btn array
+    var eventBtnArray: [UIButton] = []
+    var swapBtnArray: [UIButton] = []
+    
     //Timer
     var timer = NSTimer()
     var seconds = 60
     var timerIsRunning = false
-    var eventBtnArray: [UIButton] = []
-    var swapBtnArray: [UIButton] = []
     
     //Sound
     var currentSoundID: SystemSoundID = 0
@@ -140,10 +142,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func moveOption(sender: UIButton) {
-    
+        
+        //Identify btns with tag that are set in interface builder
         let tag = sender.tag
         
-        //Swap btn titles
         switch tag {
             
         case 1:
