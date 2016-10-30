@@ -34,13 +34,13 @@ class ScoreViewController: UIViewController {
     //-----------------------
     @IBAction func playAgain() {
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     //-----------------------
     //MARK: Extra
     //-----------------------
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden: Bool {
         return true
     }
     

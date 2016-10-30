@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     var swapBtnArray: [UIButton] = []
     
     //Timer
-    var timer = NSTimer()
+    var timer = Timer()
     var seconds = 60
     var timerIsRunning = false
     
@@ -50,8 +50,8 @@ class ViewController: UIViewController {
         
         do {
             //Get plist and unarchive it
-            let array = try PlistConverter.arrayFromFile("EventList", ofType: "plist")
-            self.eventQuiz = EventsQuiz(events: EventsUnarchiver.eventsFromArray(array))
+            let array = try PlistConverter.arrayFromFile(resource: "EventList", ofType: "plist")
+            self.eventQuiz = EventsQuiz(events: EventsUnarchiver.eventsFromArray(array: array))
             
         } catch let error {
             fatalError("\(error)")
@@ -113,7 +113,7 @@ class ViewController: UIViewController {
         setUpGame()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
         //Display alert to inform the user what to do
@@ -134,7 +134,7 @@ class ViewController: UIViewController {
         //Disable btns, clear the round array, display new events and reset the timer
         infoLabel.text = "Shake to complete"
         roundQuiz.events.removeAll()
-        nextRoundBtn.hidden = true
+        nextRoundBtn.isHidden = true
         displayEvents()
         startTimer()
         disableInteractionWithBtns(interactionDisabeld: true)
@@ -150,27 +150,27 @@ class ViewController: UIViewController {
             
         case 1:
             
-            swapBtnTitles(text1Btn, destinationPos: text2Btn)
+            swapBtnTitles(originalPos: text1Btn, destinationPos: text2Btn)
             
         case 2:
             
-            swapBtnTitles(text2Btn, destinationPos: text1Btn)
+            swapBtnTitles(originalPos: text2Btn, destinationPos: text1Btn)
             
         case 3:
             
-            swapBtnTitles(text2Btn, destinationPos: text3Btn)
+            swapBtnTitles(originalPos: text2Btn, destinationPos: text3Btn)
             
         case 4:
             
-            swapBtnTitles(text3Btn, destinationPos: text2Btn)
+            swapBtnTitles(originalPos: text3Btn, destinationPos: text2Btn)
             
         case 5:
             
-            swapBtnTitles(text3Btn, destinationPos: text4Btn)
+            swapBtnTitles(originalPos: text3Btn, destinationPos: text4Btn)
             
         case 6:
             
-            swapBtnTitles(text4Btn, destinationPos: text3Btn)
+            swapBtnTitles(originalPos: text4Btn, destinationPos: text3Btn)
             
         default:
             break
@@ -187,7 +187,7 @@ class ViewController: UIViewController {
                 
                 //Set webUrl to url of selected president then segue to web view
                 webUrl = presidentName.url
-                performSegueWithIdentifier("showWebView", sender: self)
+                performSegue(withIdentifier: "showWebView", sender: self)
             }
         }
     }
@@ -204,10 +204,10 @@ class ViewController: UIViewController {
         }else {
             
             //Set text of btn titles
-            text1Btn.setTitle(shuffledQuiz.events[index].name, forState: .Normal)
-            text2Btn.setTitle(shuffledQuiz.events[index + 1].name, forState: .Normal)
-            text3Btn.setTitle(shuffledQuiz.events[index + 2].name, forState: .Normal)
-            text4Btn.setTitle(shuffledQuiz.events[index + 3].name, forState: .Normal)
+            text1Btn.setTitle(shuffledQuiz.events[index].name, for: .normal)
+            text2Btn.setTitle(shuffledQuiz.events[index + 1].name, for: .normal)
+            text3Btn.setTitle(shuffledQuiz.events[index + 2].name, for: .normal)
+            text4Btn.setTitle(shuffledQuiz.events[index + 3].name, for: .normal)
             
             //Append events to round array
             roundQuiz.events.append(shuffledQuiz.events[index])
@@ -225,7 +225,7 @@ class ViewController: UIViewController {
         roundsCompleted += 1
         
         //Get answers of current round events
-        let sortedEvents = sortEventsForRound(roundQuiz)
+        let sortedEvents = sortEventsForRound(events: roundQuiz)
         
         let answer1 = text1Btn.titleLabel?.text
         let answer2 = text2Btn.titleLabel?.text
@@ -235,24 +235,24 @@ class ViewController: UIViewController {
         //Compare the btn titles to the answers. If they all match up then the events are chronological order. Else the events are in the wrong order
         if answer1 == sortedEvents[0].name && answer2 == sortedEvents[1].name && answer3 == sortedEvents[2].name && answer4 == sortedEvents[3].name {
             
-            loadSound("CorrectDing", soundID: &currentSoundID)
-            playSound(currentSoundID)
+            loadSound(soundName: "CorrectDing", soundID: &currentSoundID)
+            playSound(sound: currentSoundID)
             
             correctAnswers += 1
             infoLabel.text = "Tap on a president for more info"
-            nextRoundBtn.hidden = false
-            nextRoundBtn.setImage(nextRoundSuccessImg, forState: .Normal)
+            nextRoundBtn.isHidden = false
+            nextRoundBtn.setImage(nextRoundSuccessImg, for: .normal)
             disableInteractionWithBtns(interactionDisabeld: false)
             disableInteractionSwapBtns(interactionDisable: true)
             
         }else {
             
-            loadSound("IncorrectBuzz", soundID: &currentSoundID)
-            playSound(currentSoundID)
+            loadSound(soundName: "IncorrectBuzz", soundID: &currentSoundID)
+            playSound(sound: currentSoundID)
             
             infoLabel.text = "Tap on a president for more info"
-            nextRoundBtn.hidden = false
-            nextRoundBtn.setImage(nextRoundFailImg, forState: .Normal)
+            nextRoundBtn.isHidden = false
+            nextRoundBtn.setImage(nextRoundFailImg, for: .normal)
             disableInteractionWithBtns(interactionDisabeld: false)
             disableInteractionSwapBtns(interactionDisable: true)
         }
@@ -261,10 +261,10 @@ class ViewController: UIViewController {
         if roundsCompleted == numberOfRounds {
             
             infoLabel.text = "Game Over!"
-            nextRoundBtn.userInteractionEnabled = false
+            nextRoundBtn.isUserInteractionEnabled = false
             showScoreBtnWithDelay(seconds: 2)
             resetTimer()
-            timerLabel.hidden = true
+            timerLabel.isHidden = true
         }
     }
     
@@ -273,12 +273,12 @@ class ViewController: UIViewController {
         //Set up the game
         roundsCompleted = 0
         index = 0
-        showScoreBtn.hidden = true
-        nextRoundBtn.userInteractionEnabled = true
-        shuffleEvents(eventQuiz)
+        showScoreBtn.isHidden = true
+        nextRoundBtn.isUserInteractionEnabled = true
+        shuffleEvents(quiz: eventQuiz)
         roundQuiz.events.removeAll()
         displayEvents()
-        timerLabel.hidden = false
+        timerLabel.isHidden = false
         disableInteractionWithBtns(interactionDisabeld: true)
         disableInteractionSwapBtns(interactionDisable: false)
     }
@@ -286,14 +286,14 @@ class ViewController: UIViewController {
     func shuffleEvents(quiz: EventsQuiz) {
         
         //Shuffle the events so that the same game is not repeated
-        let shuffledEvents = EventsQuiz(events: GKRandomSource.sharedRandom().arrayByShufflingObjectsInArray(quiz.events) as! [Events])
+        let shuffledEvents = EventsQuiz(events: GKRandomSource.sharedRandom().arrayByShufflingObjects(in: quiz.events) as! [Events])
         shuffledQuiz = shuffledEvents
     }
     
     func sortEventsForRound(events: EventsQuiz) -> [Events]{
         
         //Sort events date by descending order. Most recent date to least recent date
-        return events.events.sort({$0.date > $1.date})
+        return events.events.sorted(by: {$0.date > $1.date})
     }
     
     
@@ -316,10 +316,10 @@ class ViewController: UIViewController {
         for btn in eventBtnArray {
             
             if bool == true {
-                btn.userInteractionEnabled = false
+                btn.isUserInteractionEnabled = false
                 
             }else {
-                btn.userInteractionEnabled = true
+                btn.isUserInteractionEnabled = true
             }
         }
     }
@@ -330,10 +330,10 @@ class ViewController: UIViewController {
         for btn in swapBtnArray {
             
             if bool == true {
-                btn.userInteractionEnabled = false
+                btn.isUserInteractionEnabled = false
                 
             }else {
-                btn.userInteractionEnabled = true
+                btn.isUserInteractionEnabled = true
             }
         }
     }
@@ -341,37 +341,32 @@ class ViewController: UIViewController {
     func swapBtnTitles(originalPos: UIButton, destinationPos: UIButton) {
         
         //Swap btn titles. Takes the first btn title and swaps it with the second btn title.
-        let firstBtnTitle = originalPos.titleForState(.Normal)
-        let secondBtnTitle = destinationPos.titleForState(.Normal)
+        let firstBtnTitle = originalPos.title(for: .normal)
+        let secondBtnTitle = destinationPos.title(for: .normal)
         
-        originalPos.setTitle(secondBtnTitle, forState: .Normal)
-        destinationPos.setTitle(firstBtnTitle, forState: .Normal)
+        originalPos.setTitle(secondBtnTitle, for: .normal)
+        destinationPos.setTitle(firstBtnTitle, for: .normal)
     }
     
-    func showScoreBtnWithDelay(seconds seconds: Int) {
+    func showScoreBtnWithDelay(seconds: Double) {
         
-        //Converts a delay in seconds to nanoseconds as signed 64 bit integer
-        let delay = Int64(NSEC_PER_SEC * UInt64(seconds))
-        
-        //Calculates a time value to execute the method given current time and delay
-        let dispatchTime = dispatch_time(DISPATCH_TIME_NOW, delay)
-        
-        //Executes the nextRound method at the dispatch time on the main queue
-        dispatch_after(dispatchTime, dispatch_get_main_queue()) {
-            self.nextRoundBtn.hidden = true
-            self.showScoreBtn.hidden = false
+        //Executes the nextRound method and shows the showScoreBtn after the given delay
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            
+            self.nextRoundBtn.isHidden = true
+            self.showScoreBtn.isHidden = false
         }
     }
     
     func displayAlert() {
         
-        let alert = UIAlertController(title: "How to Play", message: "Order the presidents in chronological order from most recent to least recent. Top down.", preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (alertAction) -> Void in
+        let alert = UIAlertController(title: "How to Play", message: "Order the presidents in chronological order from most recent to least recent. Top down.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (alertAction) -> Void in
             
             self.startTimer()
         }))
         
-        presentViewController(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
     
     //-----------------------
@@ -380,7 +375,7 @@ class ViewController: UIViewController {
     func loadSound(soundName: String, soundID: UnsafeMutablePointer<SystemSoundID>) {
         
         //Load sound
-        if let pathToSoundFile = NSBundle.mainBundle().pathForResource(soundName, ofType: "wav") {
+        if let pathToSoundFile = Bundle.main.path(forResource: soundName, ofType: "wav") {
             
             let soundPath = NSURL(fileURLWithPath: pathToSoundFile)
             AudioServicesCreateSystemSoundID(soundPath, soundID)
@@ -401,7 +396,7 @@ class ViewController: UIViewController {
         //Check if timer is running. If not then start timer
         if timerIsRunning == false {
             
-            timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(ViewController.countdown), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.countdown), userInfo: nil, repeats: true)
             timerIsRunning = true
         }
     }
@@ -431,10 +426,10 @@ class ViewController: UIViewController {
     //-----------------------
     //MARK: Device motion
     //-----------------------
-    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         
         //Detect shake motion
-        if motion == .MotionShake {
+        if motion == .motionShake {
             
             resetTimer()
             checkAnswer()
@@ -444,11 +439,11 @@ class ViewController: UIViewController {
     //-----------------------
     //MARK: Segues
     //-----------------------
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "showScore" {
             
-            if let destinationVC = segue.destinationViewController as? ScoreViewController {
+            if let destinationVC = segue.destination as? ScoreViewController {
                 
                 //Set correct answers variable in destination view controller to display users score
                 destinationVC.correctAnswers = self.correctAnswers
@@ -456,7 +451,7 @@ class ViewController: UIViewController {
             
         }else if segue.identifier == "showWebView" {
             
-            if let destinationVC = segue.destinationViewController as? WebViewViewController {
+            if let destinationVC = segue.destination as? WebViewViewController {
                 
                 //Set url variable in destination view controller to use with url request
                 destinationVC.url = self.webUrl
@@ -477,7 +472,7 @@ class ViewController: UIViewController {
     //-----------------------
     //MARK: Extra
     //-----------------------
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden: Bool {
         return true
     }
     

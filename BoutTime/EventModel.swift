@@ -11,7 +11,7 @@ import Foundation
 //-----------------------
 //MARK: Error types
 //-----------------------
-enum EventsError: ErrorType {
+enum EventsError: Error {
     
     case InvalidResource
     case ConversionError
@@ -32,8 +32,6 @@ class Events {
         self.date = date
         self.url = url
     }
-    
-    
 }
 
 //-----------------------
@@ -57,7 +55,7 @@ class PlistConverter {
     class func arrayFromFile(resource: String, ofType type: String) throws -> [[String : String]] {
         
         //Check if the path to the file exists
-        guard let path = NSBundle.mainBundle().pathForResource(resource, ofType: type) else {
+        guard let path = Bundle.main.path(forResource: resource, ofType: type) else {
             throw EventsError.InvalidResource
         }
         

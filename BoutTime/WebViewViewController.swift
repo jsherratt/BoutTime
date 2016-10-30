@@ -26,8 +26,8 @@ class WebViewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let requestURL = NSURL(string: url)
-        let request = NSURLRequest(URL: requestURL!)
+        let requestURL = URL(string: url)!
+        let request = URLRequest(url: requestURL)
         webView.loadRequest(request)
     }
     
@@ -36,16 +36,16 @@ class WebViewViewController: UIViewController {
     //-----------------------
     @IBAction func closeWebView() {
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     //-----------------------
     //MARK: Extra
     //-----------------------
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden: Bool {
         return true
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
