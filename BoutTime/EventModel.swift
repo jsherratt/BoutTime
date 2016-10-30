@@ -32,6 +32,8 @@ class Events {
         self.date = date
         self.url = url
     }
+    
+    
 }
 
 //-----------------------
